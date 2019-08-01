@@ -1,24 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+class NewPlaylist extends React.Component {
+  render(){
+    return (
+      <div style={{width: '40%', display: 'inline-block'}}> 
+        <h2 style={{color: 'blue'}}>New Playlist</h2>
+      </div>
+    )
+  }
+}
+
+class GeneratePlaylist extends React.Component {
+  render(){
+    return (
+      <div style={{width: '40%', display: 'inline-block'}}> 
+        <h2 style={{color: 'blue'}}>Generate Playlist</h2>
+      </div>
+    )
+  }
+}
+
+class Filter extends React.Component {
+  render(){
+    return (
+      <div style={{marginBottom: '60px', marginTop: '40px'}}> 
+        <input type='text' placeholder='Filter Playlists..'/>
+      </div>
+    )
+  }
+}
+
+class Playlist extends React.Component {
+  render(){
+    return (
+      <div style={{width: '25%', display: 'inline-block'}}>
+        <h3>Playlist name</h3>
+        <h4>Genre</h4>
+      </div>
+    )
+  }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1 style={{'font-size': '54px', color: 'red'}}>Spoto</h1>
+      <NewPlaylist/>
+      <GeneratePlaylist/>
+      <Filter/>
+      <Playlist/>
+      <Playlist/>
+      <Playlist/>
+      <Playlist/>
     </div>
   );
 }
