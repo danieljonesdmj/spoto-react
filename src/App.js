@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import queryString from 'querystring';
 
 class NewPlaylist extends React.Component {
   render(){
@@ -42,19 +43,26 @@ class Playlist extends React.Component {
   }
 }
 
-function App() {
-  return (
-    <div className='App'>
-      <h1 style={{'font-size': '54px', color: 'red'}}>Spoto</h1>
-      <NewPlaylist/>
-      <GeneratePlaylist/>
-      <Filter/>
-      <Playlist/>
-      <Playlist/>
-      <Playlist/>
-      <Playlist/>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount(){
+    let parsed = queryString.parse(window.location.search);
+    console.log(parsed);
+}
+
+  render(){
+    return (
+      <div className='App'>
+        <h1 style={{'fontSize': '54px', color: 'red'}}>Spoto</h1>
+        <NewPlaylist/>
+        <GeneratePlaylist/>
+        <Filter/>
+        <Playlist/>
+        <Playlist/>
+        <Playlist/>
+        <Playlist/>
+      </div>
+    );
+  }
 }
 
 export default App;
