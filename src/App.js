@@ -38,7 +38,8 @@ class Playlist extends React.Component {
   render() {
     return (
       <div style={{ width: "25%", display: "inline-block" }}>
-        <h3>Playlist name</h3>
+        {/* <h3>{this.props.name}</h3> */}
+        <h3>Playlist Name</h3>
         <h4>Genre</h4>
       </div>
     );
@@ -72,7 +73,7 @@ class App extends React.Component {
             songs: []
           }))
         })
-      );
+      ).then(data => console.log(this.state.playlists));
   }
 
   render() {
@@ -82,11 +83,12 @@ class App extends React.Component {
         <NewPlaylist />
         <GeneratePlaylist />
         <Filter />
+        {/* <Playlist name={this.state.playlist[0].name}/> */}
         <Playlist />
+        {/* <Playlist />
         <Playlist />
-        <Playlist />
-        <Playlist />
-        {console.log("playlist", this.state.playlists.name)}
+        <Playlist /> */}
+        {/* {console.log("playlist", this.state.playlists[0].name)} */}
         {/* {console.log("name", this.state.user.name)}; */}
       </div>
     );
